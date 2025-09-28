@@ -1,0 +1,127 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  color: #F4F4F9;
+  /* Cor de texto padrão branca */
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Define a fonte e a cor padrão para todos os títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #F4F4F9;
+}
+
+/*------------------------------------------------------------------------------*/
+
+/* --- Barra de Navegação --- */
+.navbar-nav .nav-link {
+  color: white;
+}
+
+/* --- Seção de Boas-Vindas (Hero) --- */
+.hero-title {
+  /*Hero = grande*/
+  font-size: 120px;
+  color: #586F7C;
+  line-height: 1;
+  /* reduz o espaçamento entre linhas do titulo */
+}
+
+.hero-text {
+  font-size: 1.25rem;
+  color: white;
+}
+
+.hero-button {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 50px;
+  /* Efeito "pill" */
+  transition: all 0.3s ease;
+  /* adiciona transição suave */
+}
+
+.hero-button:hover {
+  background-color: #B8DBD9;
+  transform: scale(1.05);
+  /* efeito de crescimento no hover */
+}
+
+/* --- Seção Sobre --- */
+#sobre h2 {
+  font-size: 50px;
+}
+
+#sobre p {
+  color: white;
+}
+
+/* --- Seção Tecnologias --- */
+
+#tecnologias .card {
+  transition: all 0.3s ease-in-out;
+}
+
+#tecnologias .card:hover {
+  transform: scale(1.05);
+}
+
+
+#tecnologias h2 {
+  font-size: 50px;
+}
+
+#tecnologias .card-body {
+  background-color: #B8DBD9;
+}
+
+#tecnologias .card-title,
+#tecnologias .card-text {
+  color: #212529;
+  font-family: "Barlow", sans-serif;
+}
+
+/* --- Seção Contato --- */
+#contato h2 {
+  font-size: 50px;
+}
+
+.contact-card {
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid #333;
+  /* borda */
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  /* efeito de elevação no hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* botão voltar ao topo */
+#back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+}

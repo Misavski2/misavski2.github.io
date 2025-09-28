@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body style="background-color: #000000;">
+    <!--Barra de navegação-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-black">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">Bem-Vindo(a)</a>
+            <button class="navbar-toggler" style="background-color: white;" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+                    <a class="nav-link text-light" href="#sobre">Sobre</a>
+                    <a class="nav-link text-light" href="#tecnologias">Tecnologias</a>
+                    <a class="nav-link text-light" href="#contato">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--Boas-Vindas-->
+    <div id="inicio" class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="hero-text">Olá, me chamo Misael,</p>
+                <h1 id="hero-texto" class="hero-title text-break">Desenvolvedor BackEnd</h1>
+                <a id="contact" href="#contato" class="btn hero-button" data-bs-toggle="modal"
+                    data-bs-target="#contactModal">Mais Sobre Mim</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="assets/images/me.png" class="img-fluid rounded-circle shadow-lg"
+                    alt="foto de Misael bem galã">
+            </div>
+        </div>
+    </div>
+
+    <!--Sobre-->
+
+    <div id="sobre" class="container my-5">
+
+        <div class="p-4 rounded-3 shadow-sm">
+
+            <h2 class="mb-3">Sobre</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ullam, non incidunt quidem illo
+                velit, delectus aliquid ducimus labore laborum porro. Neque error a laborum quaerat! Vel ad amet
+                consectetur?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate iste possimus adipisci. Quia, quas
+                consequuntur rerum accusantium ratione, cupiditate et modi, quos voluptatibus repudiandae placeat
+                sapiente earum repellendus voluptatem fugit!
+            </p>
+
+        </div>
+
+    </div>
+
+    <!--Cards com tecnologias-->
+    <section id="tecnologias" class="py-5 bg-black">
+        <div class="container">
+
+            <h2 class="text-center mb-5">Tecnologias e Ferramentas</h2>
+
+            <div class="row g-4">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://placehold.co/400x250/f06529/white?text=HTML5" class="card-img-top"
+                            alt="Logo do HTML5">
+                        <div class="card-body"">
+                            <h5 class=" card-title">HTML5</h5>
+                            <p class="card-text">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga debitis porro cupiditate
+                                doloremque, deleniti suscipit exercitationem deserunt beatae? Cupiditate nisi animi
+                                deserunt vitae reiciendis, cumque distinctio atque aspernatur veritatis! Tempore!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://placehold.co/400x250/00008B/white?text=CSS3" class="card-img-top"
+                            alt="Logo do CSS3">
+                        <div class="card-body">
+                            <h5 class="card-title">CSS3</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id sapiente optio nihil eum
+                                aperiam, officia nesciunt, iusto cupiditate dolores illo eveniet molestias omnis,
+                                doloribus adipisci. Non ratione accusantium id accusamus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://placehold.co/400x250/f0db4f/black?text=JS" class="card-img-top"
+                            alt="Logo do JavaScript">
+                        <div class="card-body">
+                            <h5 class="card-title">JavaScript (ES6+)</h5>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quo vitae quae omnis non
+                                amet, porro fugit nobis, tempora at iusto aliquam. Facere, blanditiis mollitia veritatis
+                                natus tenetur voluptate culpa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="csharpCard" class="col-lg-3 col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://placehold.co/400x250/7952b3/white?text=CSharp" class="card-img-top"
+                            alt="Logo do Bootstrap">
+                        <div class="card-body">
+                            <h5 class="card-title">C#</h5>
+                            <p id="cardText" class="card-text">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. In odio numquam deleniti
+                                tempora a laboriosam accusamus fuga, laborum debitis dolores adipisci error maiores
+                                doloremque fugit vel, unde, nam maxime doloribus!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--Footer e Contato-->
+    <section id="contato" class="py-5">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Vamos Conversar!</h2>
+                <p class="lead text-muted">Estou sempre aberto a novas oportunidades, projetos e ideias. Sinta-se à
+                    vontade para entrar em contato.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="p-4 rounded-4 shadow-sm h-100">
+                        <i class="bi bi-envelope-at-fill fs-1 text-primary"></i>
+                        <h3 class="fw-normal my-3">E-mail</h3>
+                        <p class="text-muted">A melhor forma de me contatar para propostas e oportunidades.</p>
+                        <a href="mailto: misaelkauna@gmail.com" class="btn btn-outline-secondary rounded-pill"
+                            style="color: white;">Enviar
+                            Mensagem</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="p-4 rounded-4 shadow-sm h-100">
+                        <i class="bi bi-linkedin fs-1 text-primary"></i>
+                        <h3 class="fw-normal my-3">LinkedIn</h3>
+                        <p class="text-muted">Vamos nos conectar e expandir nossa rede profissional.</p>
+                        <a href="https://www.linkedin.com/in/ferreiramisael/" target="_blank"
+                            class="btn btn-outline-secondary rounded-pill" style="color: white;">Ver Perfil</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="p-4 rounded-4 shadow-sm h-100">
+                        <i class="bi bi-github fs-1 text-primary"></i>
+                        <h3 class="fw-normal my-3">GitHub</h3>
+                        <p class="text-muted">Veja meus projetos, códigos e contribuições para a comunidade.</p>
+                        <a href="https://github.com/Misavski2" target="_blank"
+                            class="btn btn-outline-secondary rounded-pill" style="color: white;">Ver Projetos</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--botao de voltar ao topo-->
+    <a href="#inicio" id="back-to-top" class="btn btn-light btn-lg rounded-circle shadow">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!--Modal do contato -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="tituloDoMeuModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloDoMeuModal" style="color: #000000;">Informações de Contato</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p style="color: #000000;">
+                        Olá! Além de ser um desenvolvedor backend, sou apaixonado por compartilhar conhecimento. Crio
+                        conteúdo sobre programação e aprendizado de idiomas em diversas plataformas.
+                    </p>
+                    <p style="color: #000000;">
+                        Se você tem interesse em aprender mais ou apenas quer acompanhar minha jornada, me siga nas
+                        minhas redes!
+                    </p>
+
+                    <hr class="my-4">
+                    <div class="text-center">
+                        <h6 class="text-muted mb-3">Me acompanhe também:</h6>
+
+                        <a href="https://www.youtube.com/SEUCANAL" target="_blank" class="btn btn-danger btn-lg mx-2"
+                            role="button" title="Meu Canal no YouTube">
+                            <i class="bi bi-youtube me-2"></i> YouTube
+                        </a>
+
+                        <a href="https://www.tiktok.com/@SEUUSUARIO" target="_blank" class="btn btn-dark btn-lg mx-2"
+                            role="button" title="Meu Perfil no TikTok">
+                            <i class="bi bi-tiktok me-2"></i> TikTok
+                        </a>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Javascript-->
+        <script src="assets/js/script.js"></script>
+        <!--Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+            </script>
+</body>
+
+</html>
