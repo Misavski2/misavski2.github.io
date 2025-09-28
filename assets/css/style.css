@@ -71,6 +71,18 @@ h6 {
   color: white;
 }
 
+
+.highlight-text {
+  /*--- Texto span com highlight no bg */
+  color: #00d9ff;
+  text-shadow:
+    0 0 5px #00d9ff,
+    0 0 10px #00d9ff,
+    0 0 20px #00d9ff,
+    0 0 40px #0073ff;
+  background-color: transparent;
+}
+
 /* --- Seção Tecnologias --- */
 
 #tecnologias .card {
