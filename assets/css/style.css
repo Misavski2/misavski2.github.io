@@ -1,139 +1,506 @@
-html {
-  scroll-behavior: smooth;
-}
+        :root {
+            --accent: #0d6efd;
+            --accent-glow: rgba(13, 110, 253, 0.35);
+            --bg: #000000;
+            --surface: #0d0d0d;
+            --surface2: #141414;
+            --border: rgba(255, 255, 255, 0.07);
+            --text-muted: #888;
+        }
 
-body {
-  background-color: #000000;
-  color: #F4F4F9;
-  /* Cor de texto padrão branca */
-  font-family: "Barlow", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-/* Define a fonte e a cor padrão para todos os títulos */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #F4F4F9;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/*------------------------------------------------------------------------------*/
+        body {
+            background-color: var(--bg);
+            color: #e8e8e8;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 400;
+            overflow-x: hidden;
+        }
 
-/* --- Barra de Navegação --- */
-.navbar-nav .nav-link {
-  color: white;
-}
+        /* ── Navbar ── */
+        .navbar {
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+            background-color: rgba(0, 0, 0, 0.85) !important;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s;
+        }
 
-/* --- Seção de Boas-Vindas (Hero) --- */
-.hero-title {
-  /*Hero = grande*/
-  font-size: 120px;
-  color: #586F7C;
-  line-height: 1;
-  /* reduz o espaçamento entre linhas do titulo */
-}
+        .navbar-brand {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+            font-size: 1.4rem;
+        }
 
-.hero-text {
-  font-size: 1.25rem;
-  color: white;
-}
+        .nav-link {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 4px !important;
+        }
 
-.hero-button {
-  background-color: white;
-  color: black;
-  font-weight: bold;
-  padding: 10px 30px;
-  border-radius: 50px;
-  /* Efeito "pill" */
-  transition: all 0.3s ease;
-  /* adiciona transição suave */
-}
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.25s ease;
+        }
 
-.hero-button:hover {
-  background-color: #B8DBD9;
-  transform: scale(1.05);
-  /* efeito de crescimento no hover */
-}
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
 
-/* --- Seção Sobre --- */
-#sobre h2 {
-  font-size: 50px;
-}
+        /* ── Hero ── */
+        #inicio {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-#sobre p {
-  color: white;
-}
+        #inicio::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+            animation: pulse-glow 6s ease-in-out infinite alternate;
+        }
 
+        @keyframes pulse-glow {
+            from {
+                opacity: 0.5;
+                transform: scale(1);
+            }
 
-.highlight-text {
-  /*--- Texto span com highlight no bg */
-  color: #00d9ff;
-  text-shadow:
-    0 0 5px #00d9ff,
-    0 0 10px #00d9ff,
-    0 0 20px #00d9ff,
-    0 0 40px #0073ff;
-  background-color: transparent;
-}
+            to {
+                opacity: 1;
+                transform: scale(1.15);
+            }
+        }
 
-/* --- Seção Tecnologias --- */
+        .hero-text {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fade-up 0.8s 0.2s forwards;
+        }
 
-#tecnologias .card {
-  transition: all 0.3s ease-in-out;
-}
+        .hero-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1;
+            letter-spacing: 3px;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fade-up 0.8s 0.45s forwards;
+        }
 
-#tecnologias .card:hover {
-  transform: scale(1.05);
-}
+        .hero-button {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 0.75rem 2rem;
+            border-radius: 2px;
+            border: none;
+            transition: box-shadow 0.25s, transform 0.2s;
+            opacity: 0;
+            animation: fade-up 0.8s 0.7s forwards;
+        }
 
+        .hero-button:hover {
+            box-shadow: 0 0 24px var(--accent-glow);
+            transform: translateY(-2px);
+            color: #fff;
+        }
 
-#tecnologias h2 {
-  font-size: 50px;
-}
+        .hero-img {
+            width: 320px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 60px var(--accent-glow);
+            opacity: 0;
+            animation: fade-in 1s 0.6s forwards;
+        }
 
-#tecnologias .card-body {
-  background-color: #B8DBD9;
-}
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
 
-#tecnologias .card-title,
-#tecnologias .card-text {
-  color: #212529;
-  font-family: "Barlow", sans-serif;
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* --- Seção Contato --- */
-#contato h2 {
-  font-size: 50px;
-}
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
 
-.contact-card {
-  background-color: #1a1a1a;
-  color: white;
-  border: 1px solid #333;
-  /* borda */
-  transition: all 0.3s ease;
-}
+            to {
+                opacity: 1;
+            }
+        }
 
-.contact-card:hover {
-  transform: translateY(-5px);
-  /* efeito de elevação no hover */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
+        /* ── Section titles ── */
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
 
-/* botão voltar ao topo */
-#back-to-top {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 50px;
-  height: 50px;
-  display: none;
-  transition: opacity 0.3s ease-in-out;
-}
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            letter-spacing: 2px;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+
+        /* ── Sobre ── */
+        #sobre {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sobre-card {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2.5rem;
+        }
+
+        /* ── Tecnologias ── */
+        #tecnologias {
+            background: var(--bg);
+        }
+
+        .tech-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+            height: 100%;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 30px var(--accent-glow);
+        }
+
+        .tech-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .tech-card .card-body {
+            padding: 1.5rem;
+            background: var(--surface);
+        }
+
+        .tech-card .card-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        .tech-card .card-text {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        /* ── Projetos ── */
+        #projetos {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 12px 40px var(--accent-glow);
+        }
+
+        .project-thumb {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            background: var(--surface2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-thumb-placeholder {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--accent);
+            background: var(--surface2);
+        }
+
+        .project-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.65;
+            flex: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 1rem 0;
+        }
+
+        .tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 2px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            background: rgba(13, 110, 253, 0.08);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+
+        .project-links a {
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-proj-primary {
+            background: var(--accent);
+            color: #fff;
+            border: 1px solid var(--accent);
+        }
+
+        .btn-proj-primary:hover {
+            background: #0b5ed7;
+            color: #fff;
+        }
+
+        .btn-proj-ghost {
+            background: transparent;
+            color: #fff;
+            border: 1px solid var(--border);
+        }
+
+        .btn-proj-ghost:hover {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        /* ── Contato ── */
+        #contato {
+            background: var(--bg);
+        }
+
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem 1.5rem;
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+            height: 100%;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 28px var(--accent-glow);
+        }
+
+        .contact-card i {
+            color: var(--accent);
+        }
+
+        .contact-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .btn-contact {
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 8px 22px;
+            border-radius: 2px;
+            border: 1px solid var(--border);
+            color: #fff;
+            text-decoration: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .btn-contact:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 12px var(--accent-glow);
+            color: #fff;
+        }
+
+        /* ── Footer ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            letter-spacing: 1px;
+        }
+
+        /* ── Back to top ── */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            z-index: 999;
+        }
+
+        #back-to-top:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 16px var(--accent-glow);
+            color: #fff;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            width: 48px;
+            height: 3px;
+            background: var(--accent);
+            margin-bottom: 2rem;
+            border-radius: 2px;
+        }
+
+        /* ── Modal ── */
+        .modal-content {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            color: #e8e8e8;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .modal-title {
+            color: #fff !important;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+        }
+
+        .modal-footer {
+            border-top: 1px solid var(--border);
+        }
+
+        .btn-close {
+            filter: invert(1);
+        }
